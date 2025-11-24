@@ -85,7 +85,7 @@ func DefaultTestBandIbcParams() *BandIBCParams {
 	}
 }
 
-func validatePythContract(i interface{}) error {
+func validatePythContract(i any) error {
 	v, ok := i.(string)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)

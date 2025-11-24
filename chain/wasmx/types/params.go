@@ -102,7 +102,7 @@ func (p Params) Validate() error {
 	return nil
 }
 
-func validateMaxBeginBlockTotalGas(i interface{}) error {
+func validateMaxBeginBlockTotalGas(i any) error {
 	v, ok := i.(uint64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -115,7 +115,7 @@ func validateMaxBeginBlockTotalGas(i interface{}) error {
 	return nil
 }
 
-func validateMaxContractGasLimit(i interface{}) error {
+func validateMaxContractGasLimit(i any) error {
 	v, ok := i.(uint64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -127,7 +127,7 @@ func validateMaxContractGasLimit(i interface{}) error {
 	return nil
 }
 
-func validateIsExecutionEnabled(i interface{}) error {
+func validateIsExecutionEnabled(i any) error {
 	_, ok := i.(bool)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -136,7 +136,7 @@ func validateIsExecutionEnabled(i interface{}) error {
 	return nil
 }
 
-func validateMinGasPrice(i interface{}) error {
+func validateMinGasPrice(i any) error {
 	v, ok := i.(uint64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -148,7 +148,7 @@ func validateMinGasPrice(i interface{}) error {
 	return nil
 }
 
-func validateAccessConfig(i interface{}) error {
+func validateAccessConfig(i any) error {
 	v, ok := i.(wasmtypes.AccessConfig)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)

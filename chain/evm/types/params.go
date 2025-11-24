@@ -113,7 +113,7 @@ func (p Params) IsAuthorisedDeployer(addr ethcommon.Address) bool {
 	return false
 }
 
-func ValidateEVMDenom(i interface{}) error {
+func ValidateEVMDenom(i any) error {
 	denom, ok := i.(string)
 	if !ok {
 		return fmt.Errorf("invalid parameter EVM denom type: %T", i)
@@ -122,7 +122,7 @@ func ValidateEVMDenom(i interface{}) error {
 	return sdk.ValidateDenom(denom)
 }
 
-func ValidateBool(i interface{}) error {
+func ValidateBool(i any) error {
 	_, ok := i.(bool)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -130,7 +130,7 @@ func ValidateBool(i interface{}) error {
 	return nil
 }
 
-func validateEIPs(i interface{}) error {
+func validateEIPs(i any) error {
 	eips, ok := i.([]int64)
 	if !ok {
 		return fmt.Errorf("invalid EIP slice type: %T", i)
@@ -144,7 +144,7 @@ func validateEIPs(i interface{}) error {
 	return nil
 }
 
-func ValidateChainConfig(i interface{}) error {
+func ValidateChainConfig(i any) error {
 	cfg, ok := i.(ChainConfig)
 	if !ok {
 		return fmt.Errorf("invalid chain config type: %T", i)

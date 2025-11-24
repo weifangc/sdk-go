@@ -8,7 +8,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 )
 
-var parserMap = map[string]interface{}{
+var parserMap = map[string]any{
 	"/cosmos.bank.v1beta1.MsgSend":      banktypes.MsgSend{},
 	"/cosmos.bank.v1beta1.MsgMultiSend": banktypes.MsgMultiSend{},
 }

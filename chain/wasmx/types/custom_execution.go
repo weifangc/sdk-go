@@ -13,9 +13,9 @@ type InjectiveExecMsg struct {
 }
 
 type ExecutionData struct {
-	Origin string      `json:"origin"`
-	Name   string      `json:"name"`
-	Args   interface{} `json:"args"`
+	Origin string `json:"origin"`
+	Name   string `json:"name"`
+	Args   any    `json:"args"`
 }
 
 func NewInjectiveExecMsg(origin sdk.AccAddress, data string) (*InjectiveExecMsg, error) {

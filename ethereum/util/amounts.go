@@ -22,7 +22,7 @@ func (w Wei) Bytes() []byte {
 	return []byte(decimal.Decimal(w).String())
 }
 
-func (w *Wei) Scan(v interface{}) error {
+func (w *Wei) Scan(v any) error {
 	if v == nil {
 		return nil
 	}

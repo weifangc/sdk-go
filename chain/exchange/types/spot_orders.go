@@ -30,9 +30,9 @@ func ComputeSpotOrderHash(marketId, orderType, triggerPrice string, orderInfo IO
 		Salt:              "0x0000000000000000000000000000000000000000000000000000000000000000",
 	}
 
-	var message = map[string]interface{}{
+	var message = map[string]any{
 		"MarketId": marketId,
-		"OrderInfo": map[string]interface{}{
+		"OrderInfo": map[string]any{
 			"SubaccountId": orderInfo.GetSubaccountId(),
 			"FeeRecipient": orderInfo.GetFeeRecipient(),
 			"Price":        orderInfo.GetPrice().String(),

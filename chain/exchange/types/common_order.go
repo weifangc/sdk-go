@@ -129,9 +129,9 @@ func ComputeOrderHash(marketId, subaccountId, feeRecipient, price, quantity, mar
 		Salt:              "0x0000000000000000000000000000000000000000000000000000000000000000",
 	}
 
-	var message = map[string]interface{}{
+	var message = map[string]any{
 		"MarketId": marketId,
-		"OrderInfo": map[string]interface{}{
+		"OrderInfo": map[string]any{
 			"SubaccountId": subaccountId,
 			"FeeRecipient": feeRecipient,
 			"Price":        price,

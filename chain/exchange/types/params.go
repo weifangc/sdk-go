@@ -238,7 +238,7 @@ func ValidateFixedGasFlag(enabled any) error {
 	return nil
 }
 
-func ValidateSpotMarketInstantListingFee(i interface{}) error {
+func ValidateSpotMarketInstantListingFee(i any) error {
 	v, ok := i.(sdk.Coin)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -251,7 +251,7 @@ func ValidateSpotMarketInstantListingFee(i interface{}) error {
 	return nil
 }
 
-func ValidateDerivativeMarketInstantListingFee(i interface{}) error {
+func ValidateDerivativeMarketInstantListingFee(i any) error {
 	v, ok := i.(sdk.Coin)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -264,7 +264,7 @@ func ValidateDerivativeMarketInstantListingFee(i interface{}) error {
 	return nil
 }
 
-func ValidateBinaryOptionsMarketInstantListingFee(i interface{}) error {
+func ValidateBinaryOptionsMarketInstantListingFee(i any) error {
 	v, ok := i.(sdk.Coin)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -277,7 +277,7 @@ func ValidateBinaryOptionsMarketInstantListingFee(i interface{}) error {
 	return nil
 }
 
-func ValidateFee(i interface{}) error {
+func ValidateFee(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -297,7 +297,7 @@ func ValidateFee(i interface{}) error {
 	return nil
 }
 
-func ValidateMakerFee(i interface{}) error {
+func ValidateMakerFee(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -318,7 +318,7 @@ func ValidateMakerFee(i interface{}) error {
 	return nil
 }
 
-func ValidateHourlyFundingRateCap(i interface{}) error {
+func ValidateHourlyFundingRateCap(i any) error {
 	v, ok := i.(math.LegacyDec)
 
 	if !ok {
@@ -344,7 +344,7 @@ func ValidateHourlyFundingRateCap(i interface{}) error {
 	return nil
 }
 
-func ValidateHourlyInterestRate(i interface{}) error {
+func ValidateHourlyInterestRate(i any) error {
 	v, ok := i.(math.LegacyDec)
 
 	if !ok {
@@ -366,7 +366,7 @@ func ValidateHourlyInterestRate(i interface{}) error {
 	return nil
 }
 
-func ValidateTickSize(i interface{}) error {
+func ValidateTickSize(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -426,7 +426,7 @@ func ValidateTickSize(i interface{}) error {
 	return nil
 }
 
-func ValidateMinNotional(i interface{}) error {
+func ValidateMinNotional(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -443,7 +443,7 @@ func ValidateMinNotional(i interface{}) error {
 	return nil
 }
 
-func ValidateMarginRatio(i interface{}) error {
+func ValidateMarginRatio(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -462,7 +462,7 @@ func ValidateMarginRatio(i interface{}) error {
 	return nil
 }
 
-func ValidateFundingInterval(i interface{}) error {
+func ValidateFundingInterval(i any) error {
 	v, ok := i.(int64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -475,7 +475,7 @@ func ValidateFundingInterval(i interface{}) error {
 	return nil
 }
 
-func ValidatePostOnlyModeHeightThreshold(i interface{}) error {
+func ValidatePostOnlyModeHeightThreshold(i any) error {
 	v, ok := i.(int64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -488,7 +488,7 @@ func ValidatePostOnlyModeHeightThreshold(i interface{}) error {
 	return nil
 }
 
-func ValidateAdmins(i interface{}) error {
+func ValidateAdmins(i any) error {
 	v, ok := i.([]string)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -511,7 +511,7 @@ func ValidateAdmins(i interface{}) error {
 	return nil
 }
 
-func ValidateFundingMultiple(i interface{}) error {
+func ValidateFundingMultiple(i any) error {
 	v, ok := i.(int64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -524,7 +524,7 @@ func ValidateFundingMultiple(i interface{}) error {
 	return nil
 }
 
-func ValidateDerivativeOrderSideCount(i interface{}) error {
+func ValidateDerivativeOrderSideCount(i any) error {
 	v, ok := i.(uint32)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -537,7 +537,7 @@ func ValidateDerivativeOrderSideCount(i interface{}) error {
 	return nil
 }
 
-func ValidateInjRewardStakedRequirementThreshold(i interface{}) error {
+func ValidateInjRewardStakedRequirementThreshold(i any) error {
 	v, ok := i.(math.Int)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -554,7 +554,7 @@ func ValidateInjRewardStakedRequirementThreshold(i interface{}) error {
 	return nil
 }
 
-func ValidateTradingRewardsVestingDuration(i interface{}) error {
+func ValidateTradingRewardsVestingDuration(i any) error {
 	v, ok := i.(int64)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -567,7 +567,7 @@ func ValidateTradingRewardsVestingDuration(i interface{}) error {
 	return nil
 }
 
-func ValidateLiquidatorRewardShareRate(i interface{}) error {
+func ValidateLiquidatorRewardShareRate(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -586,7 +586,7 @@ func ValidateLiquidatorRewardShareRate(i interface{}) error {
 	return nil
 }
 
-func ValidateAtomicMarketOrderAccessLevel(i interface{}) error {
+func ValidateAtomicMarketOrderAccessLevel(i any) error {
 	v, ok := i.(AtomicMarketOrderAccessLevel)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -597,7 +597,7 @@ func ValidateAtomicMarketOrderAccessLevel(i interface{}) error {
 	return nil
 }
 
-func ValidateAtomicMarketOrderFeeMultiplier(i interface{}) error {
+func ValidateAtomicMarketOrderFeeMultiplier(i any) error {
 	v, ok := i.(math.LegacyDec)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
@@ -615,7 +615,7 @@ func ValidateAtomicMarketOrderFeeMultiplier(i interface{}) error {
 	return nil
 }
 
-func ValidateBool(i interface{}) error {
+func ValidateBool(i any) error {
 	_, ok := i.(bool)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)

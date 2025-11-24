@@ -119,7 +119,7 @@ func WrapTxToEIP712WithSignBytes(
 	feePayer cosmtypes.AccAddress,
 	timeoutHeight uint64,
 ) (typeddata.TypedData, error) {
-	txData := make(map[string]interface{})
+	txData := make(map[string]any)
 	if err := json.Unmarshal(signBytes, &txData); err != nil {
 		err = fmt.Errorf("failed to unmarshal data provided into WrapTxToEIP712: %w", err)
 		return typeddata.TypedData{}, err
@@ -139,7 +139,7 @@ func WrapTxToEIP712WithSignBytes(
 	}
 
 	if feePayer != nil {
-		feeInfo := txData["fee"].(map[string]interface{})
+		feeInfo := txData["fee"].(map[string]any)
 		feeInfo["feePayer"] = feePayer.String()
 
 		// also patching msgTypes to include feePayer
@@ -210,7 +210,7 @@ func WrapTxToEIP712V2(
 		return typeddata.TypedData{}, fmt.Errorf("marshal fee info failed: %w", err)
 	}
 
-	ctx := map[string]interface{}{
+	ctx := map[string]any{
 		"account_number": signerData.AccountNumber,
 		"sequence":       signerData.Sequence,
 		"timeout_height": tx.GetTimeoutHeight(),

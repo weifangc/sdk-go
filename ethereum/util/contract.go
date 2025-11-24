@@ -87,7 +87,7 @@ func (contract *BoundContract) ABI() abi.ABI {
 	return contract.abi
 }
 
-func (c *BoundContract) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+func (c *BoundContract) Transact(opts *bind.TransactOpts, method string, params ...any) (*types.Transaction, error) {
 	if c.transactFn == nil {
 		return c.BoundContract.Transact(opts, method, params...)
 	}
